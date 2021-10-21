@@ -54,7 +54,9 @@ const Login = (props) => {
                     </>
                 )}
                 {LoginError.email && (
-                    <div className="Error">{LoginError.email}</div>
+                    <div className="Error">
+                        {translate(LoginError.errorCode)}
+                    </div>
                 )}
                 {!switchLogin && (
                     <>
