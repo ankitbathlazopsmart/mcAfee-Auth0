@@ -20,12 +20,12 @@ function useQuery() {
 
 const App = ({ pageConfig }) => {
     console.log("Bundle is working fine");
-    console.log(window.location.hash.culture);
+    console.log(window.location.hash.substr(1));
 
     let query = useQuery();
     let locale = useRef("");
     let lang;
-    let culture = query.get("culture") ?? window.location.hash.culture;
+    let culture = query.get("culture") ?? window.location.hash.substr(1);
 
     if (culture === null) {
         if (localStorage.getItem("lang") === null) {
