@@ -21,6 +21,8 @@ function useQuery() {
 const App = ({ pageConfig }) => {
     console.log("Bundle is working fine");
 
+    console.log(window.location.hash);
+
     let query = useQuery();
     let locale = useRef("");
     let lang;
