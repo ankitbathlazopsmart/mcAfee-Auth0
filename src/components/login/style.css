@@ -84,7 +84,7 @@ input:-webkit-autofill {
 }
 .Error {
     color: red;
-    padding: 14px 0;
+    padding: 14px 1rem;
 }
 .RequestOtp {
     margin-top: 1rem;
@@ -108,6 +108,7 @@ input:-webkit-autofill {
     display: flex;
     flex-direction: column;
     border-top: 1px dashed #333;
+    margin: 1rem;
 }
 
 .Switch {
