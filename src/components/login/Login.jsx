@@ -53,7 +53,7 @@ const Login = (props) => {
                         </div>
                     </>
                 )}
-                {LoginError.email && (
+                {LoginError.errorCode && (
                     <div className="Error">
                         {translate(LoginError.errorCode)}
                     </div>
