@@ -20,7 +20,10 @@ function useQuery() {
 
 const App = ({ pageConfig }) => {
     console.log("Bundle is working fine");
-    console.log(window.location.hash.substr(1));
+    console.log(
+        window.location.hash.substr(1).get("culture"),
+        window.location.hash.substr(1).get("aff_id")
+    );
 
     let query = useQuery();
     let locale = useRef("");
