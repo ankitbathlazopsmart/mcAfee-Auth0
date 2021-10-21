@@ -8,7 +8,7 @@ const CommonDataProvider = (props) => {
     useEffect(() => {
         const getCommonData = async () => {
             const res = await axios.get(
-                "/client/9dR6Ug2BQQbmBMp6grHf1R962NBigRxg.js?t1634713429698"
+                "/client/5rAu80xApaEFyGxTAsWBEl5FiNVYg1IL.js?t1634713429698"
             );
             const data = JSON.parse(res.data.slice(16, -2));
             console.log(data.strategies);
