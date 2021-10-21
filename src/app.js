@@ -22,12 +22,10 @@ const App = ({ pageConfig }) => {
     console.log("Bundle is working fine");
     const parsedHash = new URLSearchParams(window.location.hash.substr(1));
 
-    console.log(parsedHash.get("culture"), parsedHash.get("aff_id"));
-
     let query = useQuery();
     let locale = useRef("");
     let lang;
-    let culture = query.get("culture") ?? window.location.hash.substr(1);
+    let culture = query.get("culture") ?? parsedHash.get("culture");
 
     if (culture === null) {
         if (localStorage.getItem("lang") === null) {
