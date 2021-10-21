@@ -4,16 +4,37 @@ import App from "./app";
 
 import "./index.css";
 
-window.LoginWidget = class LoginWidget {
-  init(opts) {
-    const pageConfig = opts.pageConfig;
-    if (!pageConfig) {
-      throw new Error("pageConfig must be provided in opts");
-    }
+// window.LoginWidget = class LoginWidget {
+//     init(opts) {
+//         const pageConfig = opts.pageConfig;
+//         if (!pageConfig) {
+//             console.log("hello");
+//             throw new Error("pageConfig must be provided in opts");
+//         }
+//     }
+// };
 
-    ReactDOM.render(
-      <App pageConfig={pageConfig} />,
-      document.getElementById("root")
-    );
-  }
+import { BrowserRouter } from "react-router-dom";
+
+window.LoginWidget = class LoginWidget {
+    init(opts) {
+        const pageConfig = opts.pageConfig;
+        if (!pageConfig) {
+            throw new Error("pageConfig must be provided in opts");
+        }
+
+        ReactDOM.render(
+            <BrowserRouter>
+                <App pageConfig={pageConfig} />
+            </BrowserRouter>,
+            document.getElementById("root")
+        );
+    }
 };
+
+// ReactDOM.render(
+//     <BrowserRouter>
+//         <App />
+//     </BrowserRouter>,
+//     document.getElementById("root")
+// );
