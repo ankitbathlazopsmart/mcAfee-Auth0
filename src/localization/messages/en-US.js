@@ -28,6 +28,10 @@ const en = {
             "This login attempt has been blocked because the password you're using was previously disclosed through a data breach ",
         or_Signin_with: "or Sign in with:",
         Do_not_have_an_account: "Don't have an Account ?",
+        invalid_user_password: "Wrong credentials.",
+        invalid_captcha:
+            "Solve the challenge question to verify you are not a robot.",
+        invalid_recaptcha: "Select the checkbox to verify you are not a robot.",
     },
 };
 export default en;

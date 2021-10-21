@@ -29,6 +29,11 @@ const fr = {
             "Cette tentative de connexion a été bloquée car le mot de passe que vous utilisez a déjà été divulgué suite à une violation de données",
         or_Signin_with: "Ou connectez-vous avec :",
         Do_not_have_an_account: "Vous n'avez pas de compte ?",
+        invalid_user_password: "Mauvais identifiants.",
+        invalid_captcha:
+            "RÃ©solvez la question du dÃ©fi pour vÃ©rifier que vous n'Ãªtes pas un robot.",
+        invalid_recaptcha:
+            "Cochez la case pour vÃ©rifier que vous n'Ãªtes pas un robot.",
     },
 };
 export default fr;
