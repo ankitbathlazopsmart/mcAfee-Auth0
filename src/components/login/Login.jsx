@@ -53,10 +53,8 @@ const Login = (props) => {
                         </div>
                     </>
                 )}
-                {LoginError.errorCode && (
-                    <div className="Error">
-                        {translate(LoginError.errorCode)}
-                    </div>
+                {LoginError.email && (
+                    <div className="Error">{LoginError.email}</div>
                 )}
                 {!switchLogin && (
                     <>
@@ -110,7 +108,9 @@ const Login = (props) => {
                     <div>{translate("signIn")}</div>
                 </button>
             </form>
-            <div className="Error">{LoginError.databaseError}</div>
+            {LoginError.errorCode && (
+                <div className="Error">{translate(LoginError.errorCode)}</div>
+            )}
 
             <div className="SwitchContainer">
                 <div className="Switch">{translate("or")}</div>
