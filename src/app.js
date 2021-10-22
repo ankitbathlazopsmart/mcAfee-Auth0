@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import { Route, Switch, useLocation } from "react-router-dom";
+import { Redirect, Route, Switch, useLocation } from "react-router-dom";
 
 import { Home, Profile, ExternalApi } from "./views";
 import ProtectedRoute from "./auth/protected-route";
@@ -21,11 +21,11 @@ function useQuery() {
 const App = ({ pageConfig }) => {
     console.log("Bundle is working fine");
     const parsedHash = new URLSearchParams(window.location.hash.substr(1));
+    sessionStorage.setItem("params", useLocation().search);
 
     let query = useQuery();
     let locale = useRef("");
     let lang;
-    console.log(useLocation(), query, "ankit");
     let culture = query.get("culture") ?? parsedHash.get("culture");
 
     if (culture === null) {
@@ -46,6 +46,16 @@ const App = ({ pageConfig }) => {
     } else {
         locale.current = "en-us";
     }
+    window.addEventListener("beforeunload", function (e) {
+        console.log("ankit=====");
+        e.preventDefault();
+        return (
+            <Redirect
+                to={`/login${sessionStorage.getItem("search")}`}
+            ></Redirect>
+        );
+    });
+
     return (
         <CommonDataProvider>
             <LanguageProvider locale={locale.current}>
