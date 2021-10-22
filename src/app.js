@@ -25,6 +25,7 @@ const App = ({ pageConfig }) => {
     let query = useQuery();
     let locale = useRef("");
     let lang;
+    console.log(useLocation(), query, "ankit");
     let culture = query.get("culture") ?? parsedHash.get("culture");
 
     if (culture === null) {

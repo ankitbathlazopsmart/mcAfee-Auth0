@@ -24,7 +24,7 @@ window.LoginWidget = class LoginWidget {
         }
 
         ReactDOM.render(
-            <BrowserRouter basename={window.location.pathname}>
+            <BrowserRouter>
                 <App pageConfig={pageConfig} />
             </BrowserRouter>,
             document.getElementById("root")
