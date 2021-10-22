@@ -57,7 +57,9 @@ const App = ({ pageConfig }) => {
                                     <Route
                                         path="/login"
                                         exact
-                                        component={Login}
+                                        component={() => (
+                                            <Login pageConfig={pageConfig} />
+                                        )}
                                     />
                                     <Route
                                         path="/signUp"

@@ -16,8 +16,10 @@ const LoginUI = (props) => {
         onPressContinue,
         getOtp,
         socialBtn,
+        pageConfig,
     } = props;
 
+    const link = `state=${pageConfig.extraParams.state}&client=${pageConfig.clientId}&protocol=${pageConfig.extraParams.protocol}&redirect_uri=${pageConfig.callbackURL}&fragment=${pageConfig.extraParams.fragment}`;
     return (
         <>
             <div className="LoginContainer">
@@ -38,7 +40,10 @@ const LoginUI = (props) => {
                             <div>
                                 {translate("Do_not_have_an_account")}
                                 <span>
-                                    <Link to="/signUp"> Create one now</Link>
+                                    <Link to={`/signUp?${link}`}>
+                                        {" "}
+                                        Create one now
+                                    </Link>
                                 </span>
                             </div>
                         </div>
