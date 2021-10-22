@@ -149,6 +149,7 @@ export default function LoginContainer(props) {
 
     const child = React.Children.only(props.children);
     return React.cloneElement(child, {
+        ...props,
         onChange,
         onToggle,
         switchLogin,
