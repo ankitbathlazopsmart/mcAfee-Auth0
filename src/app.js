@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 import React, { useRef } from "react";
 import { Redirect, Route, Switch, useLocation } from "react-router-dom";
 
@@ -21,7 +22,9 @@ function useQuery() {
 const App = ({ pageConfig }) => {
     console.log("Bundle is working fine");
     const parsedHash = new URLSearchParams(window.location.hash.substr(1));
-    sessionStorage.setItem("params", useLocation().search);
+    if (useLocation().pathname === "/login") {
+        sessionStorage.setItem("params", useLocation().search);
+    }
 
     let query = useQuery();
     let locale = useRef("");
